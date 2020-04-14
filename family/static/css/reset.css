@@ -77,7 +77,7 @@ ul li{
 	height: 80px;
 	float: left;
 	margin-right: 156px;
-	background: url("https://ae01.alicdn.com/kf/Hd4e78590a7cf400497afcae734d33ebaL.jpg") no-repeat;
+	background: url('https://ae01.alicdn.com/kf/Hd4e78590a7cf400497afcae734d33ebaL.jpg') no-repeat;
 }
 .header_wrap .nav{
 	float: left;
