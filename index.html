@@ -14,14 +14,49 @@
 <![endif]-->
 <noscript>
 &lt;link rel="stylesheet" href="css/noscript.css"/&gt;
-</noscript> 
-	     <style>
-                 html {
-                     background: url('https://ae01.alicdn.com/kf/H420b8ea5329b4ce4b0dc96c20ca4ed55z.jpg') no-repeat; background-size: cover;
-                 }
-	     </style>
+</noscript>
+	<style>
+           html, body {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+           }
+
+           main#background {
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            background-size: cover;
+            animation-delay: 0s;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            animation-timing-function: ease;
+           }
+
+           @keyframes fadein {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+           }
+       </style>	     
 	</head>
 <body style="background-position: 0px 0px; background: url('https://ae01.alicdn.com/kf/H420b8ea5329b4ce4b0dc96c20ca4ed55z.jpg') no-repeat; background-size: cover;">
+	<main id="background"></main>
+  <script>
+    addFadeInBackground('https://ae01.alicdn.com/kf/H2a86978375db4edca818a7a36c8cae95H.gif', 'background');
+    
+    function addFadeInBackground(url, domId) {
+      var background = new Image();
+      background.src = url;
+      background.onload = function () {
+        console.log('Background load complete!');
+        var loadbackground = document.getElementById(domId);
+        loadbackground.style.backgroundImage = 'url(' + background.src + ')';
+        loadbackground.style.animationName = 'fadein';
+      }
+    }
+  </script>
+   
 <div id="wrapper">
 	<header id="header">
 	<div class="logo">  </div>	
